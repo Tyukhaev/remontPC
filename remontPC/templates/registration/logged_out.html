@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block logout %}
+<ul class="breadcrumb">
+    <li><a href="PC.html">Главная</a></li>
+    <li class="activem">Выход</li>
+  </ul>	
+<div class="zagolov">
+    <h1>Всего хорошего!</h1></div>
+
+<span class="psw"><a href="{% url 'login' %}">Войти снова</a></span>
+{% endblock %}

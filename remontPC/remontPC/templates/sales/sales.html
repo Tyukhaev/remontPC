@@ -1,0 +1,59 @@
+{% extends 'mainsales.html' %}
+
+{% block title %}Акции{% endblock  %}
+
+{% block saless %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'main:index' %}">Главная</a></li>
+    <li class="activem">Акции</li>
+  </ul>	
+
+      
+  <div class="zagolov">
+  <h1>Акции</h1></div>	
+          <div class = "saless">
+
+    {% if sales %}
+
+        {% for a in sales  %}
+        <fieldset class="salesfieldset" style="width: 340px;">
+            <legend class="saleslegend">{{a.sale_name}}</legend>		
+            <div class="salesinside">	
+                <div class="salesimg">
+                    <img src="{{a.sale_image.url}}" width="250" alt="">
+                </div>	
+                <div class="textandbutton">	
+                    <div class="salesP">
+                    <p>{{a.sale_description}}
+                    </p></div>
+                    <a href="{% url 'sales:saledetail' a.id %}" class="button">Показать</a>	
+                
+                </div>	
+            </div>
+            </fieldset>
+        {% endfor %}
+    {% else %}
+
+        Акции нет
+
+    {% endif  %}
+        </div>     
+{% endblock  %}
+{% block pagination %}
+<div class="pagination">
+
+    {% if sales.has_previous %}
+        <a href="?page={{sales.previous_page_number}}">Назад</a>
+    {% endif %}
+    {% for pg in sales.paginator.page_range %}
+        {% if sales.number == pg %}
+        <a class="active" href="?page={{pg}}">{{pg}}</a>				
+        {% else %}
+        <a href="?page={{pg}}">{{pg}}</a>
+        {% endif %}
+    {% endfor %}
+    {% if sales.has_next %}
+        <a href="?page={{sales.next_page_number}}">Далее</a>
+    {% endif %}
+</div>
+    {% endblock %}   

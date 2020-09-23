@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+		<meta charset="UTF-8" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link rel="stylesheet" href="{% static 'remontPC/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'remontPC/lightzoom/style.css' %}" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
+        <script src="script.js"></script>	
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>{% block title %}Ремонт компьютеров на дому{% endblock  %}</title>
+    </head>
+    <body>
+    <header>
+        <div class = "mainheader">
+			
+			<div class="logo">				
+			<a class="imgA" href="{% url 'main:index' %}"><img src="{% static 'remontPC/image/home.png' %}" alt=""></a>
+ 			<p><a href="{% url 'main:index' %}">У Михалыча<br/>Ремонт на дому</a></p>	
+			</div>
+				<div class="contacts">
+					<div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/phone.jpg' %}" alt=""></a> 
+					88005553535</div>
+					
+					<div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/geol.png' %}" alt=""></a>
+					Ленина 11</div>
+					
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
+					bgu@mail.com</div>
+				</div>
+				
+				<div class="Sochseti">
+					<div class="vk">
+						<a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
+					</div>
+					<div class="youtube">
+						<a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+					</div>
+				</div>								
+				<div class="login">		
+                    {% if user.is_authenticated %}
+                    <img src="{% static 'remontPC/image/icon.png' %}" alt="">                
+                    <p><a href="{% url 'users:client' user.id %}">{{user.username}}</a></p>
+                    <div class="cart">
+                        {% with total_items=cart|length %}
+                            {% if cart|length > 0 %}
+                                У вас в заказе:
+                                <a href="{% url 'cart:cart_detail' %}">
+                                    {{ total_items }} услуга{{ total_items|pluralize }},
+                                    на сумму {{ cart.get_total_price }} руб.
+                                </a>
+                            {% else %}
+                                Ваша карзина пуста
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+					<div class="korzina"><a href="{% url 'cart:cart_detail' %}"><img src="{% static 'remontPC/image/korzina.png' %}" alt=""></a>
+					</div>
+					<a href="{% url 'logout' %}" class="button">Выйти</a>
+					{% else %}
+					<p><a href="{% url 'login' %}">Гость</a></p>
+					<a href="{% url 'login' %}" class="button">Войти</a>
+					{% endif %}							
+                </div>		
+            </div>	
+		
+	</header>
+		<div class='admenu' >
+			<nav id="desktop">
+				<ul>
+					<li><a href="{% url 'mainservices:index' %}">Услуги</a></li>
+					<li><a href="{% url 'users:workers' %}">Мастера</a></li>
+					<li><a href="{% url 'reviews:reviews' %}">Отзывы</a></li>
+					<li><a href="{% url 'users:contacts' %}">Контакты</a></li>
+					<li><a href="{% url 'sales:sales' %}">Акции</a></li>
+				</ul>	
+			</nav>	
+		</div>	
+               <div id="burg">
+                    <a href="#">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                    </a>
+               </div>	
+		<div class='admenu-mobile' >
+			<nav id="mobile">
+				<ul>
+					<li><a href="{% url 'mainservices:index' %}">Услуги</a></li>
+					<li><a href="{% url 'users:workers' %}">Мастера</a></li>
+					<li><a href="{% url 'reviews:reviews' %}">Отзывы</a></li>
+					<li><a href="{% url 'users:contacts' %}">Контакты</a></li>
+					<li><a href="{% url 'sales:sales' %}">Акции</a></li>
+				</ul>	
+			</nav>	
+		</div>	
+		<ul class="breadcrumb">
+			<li><a href="{% url 'main:index' %}">Главная</a></li>
+			<li><a href="{% url 'mainservices:index' %}">Раезделы</a></li>    
+			<li><a href="{% url 'mainservices:mainservicedetail' s.service_mainservice.id %}">{{s.service_mainservice.mainservice_name}}</a></li>       
+			<li class="activem">{{s.service_name}}</li>
+		  </ul>
+		<div class="content">
+			<div class="zagolovcard">
+			<h1>{{s.service_name}}</h1></div>
+			<div class="podcard">
+				<div class="cardpoduslugi">
+					<div class="imgpodcard"><img src="{{s.service_images.url}}" width="400" alt=""></div>
+					<fieldset class="opisaniepoduslugi">										
+					<legend class="filtrPOlegend">Что мы далаем</legend>
+					<div class="salesP">
+						<p>{{s.service_description}}</p>
+					</div>
+					</fieldset>				
+				</div>		
+				{% if user.is_authenticated %}
+				<div class="podcardop">
+					
+					<fieldset class="podcardopfie">
+						<div class="uslugapriceus"><img src="{% static 'remontPC/image/ruble.png' %}"  alt=""><p>{{s.service_price}} руб.</p></div>
+						<div class="uslugatimeus"><img src="{% static 'remontPC/image/averagetime.png' %}"   alt=""><p>{{s.service_averagetime}} мин.</p></div>				
+						<form action="{% url 'cart:cart_add' s.id %}" method="post">
+							{{ cartservice_form }}
+							{% csrf_token %}						
+							<input type="submit" class="buttonadd" value="Добавить в заказ">	
+						</form>									
+					</fieldset>	
+				</div>
+				{% else %}
+				<p>Что бы добавить даннаую услугу в заказ, 
+					вы должны авторизироваться</p>
+				<a href="{% url 'login' %}" class="buttonadd">Войти</a>
+				{% endif %}
+			</div>
+			{% block endblock %}
+				
+			{% if reviews %}
+			<h2 style="font-size: 30px; text-align: center; margin-top: 30px;">Отзывы на данную услугу</h2>
+			<div class="bigbutton"><a href="{% url 'reviews:newreview' %}" class="buttonbig">Оставить отзыв</a>
+			</div>
+			<div class="reviewsall">
+				{% for s in reviews %}	
+
+					<div class = "reviews">
+						<section class="all">
+							<div class="reviews-img">
+								<div class="aboutreviews"><p>Мастер: {{s.review_worker}}</p><br/> Услуга: <a href="{% url 'services:servicedetail' s.review_service_id %}"> {{s.review_service}} </a></div>				
+								<a href="{{s.review_screenshot.url}}" class="lightzoom" title="My Caption">
+								<img src="{{s.review_screenshot.url}}" alt="image">
+								</a>
+								<div class="reviewsby"><p>Дата: {{s.review_pubdate}}<br/>Отзыв написал(а):
+									{% if s.review_name %}
+										{{s.review_name}}
+									{% else %}
+										{{s.review_client.client_name}}
+									{% endif %}										
+								</p></div>
+							</div>
+							<div class="allcomments">
+								<fieldset class="dleverytaingun">
+									<legend class="mealitykadsets">Ответы ({{s.reviewanswer_set.count}}) </legend>
+								{% if s.reviewanswer_set.all %}
+									{% for comment in s.reviewanswer_set.all %}	
+									<div class="comments">	
+											<img src="{{comment.reviewanswer_author.worker_image.url}}" alt="Avatar" style="width:90px">
+											<div class="text">
+												<h2>{{comment.reviewanswer_author.worker_name}}</h2>
+												<p>{{comment.reviewanswer_text}}</p>
+											</div>
+
+										</div>
+								{% endfor %}
+								{% endif %}
+							</fieldset>	
+							</div>
+						</section>	
+					</div>
+				
+					{% endfor %}
+				</div>
+				{% block pagination %}
+				<div class="pagination">
+				
+					{% if reviews.has_previous %}
+						<a href="?page={{reviews.previous_page_number}}">Назад</a>
+					{% endif %}
+					{% for pg in reviews.paginator.page_range %}
+						{% if reviews.number == pg %}
+						<a class="active" href="?page={{pg}}">{{pg}}</a>				
+						{% else %}
+						<a href="?page={{pg}}">{{pg}}</a>
+						{% endif %}
+					{% endfor %}
+					{% if reviews.has_next %}
+						<a href="?page={{reviews.next_page_number}}">Далее</a>
+					{% endif %}
+				</div>
+					{% endblock %} 	
+				{% else %}
+				<div class="bigbutton"><a href="{% url 'reviews:newreview' %}" class="buttonbig">Оставить отзыв</a>
+				</div>
+				<h2 style="font-size: 30px; text-align: center; margin-top: 10px; margin-bottom: 30px;">На данную услугу ещё нет отзывов, станьте первым!</h2>
+				{% endif %}
+		{% endblock %}		
+		</div>	
+		<footer >
+			<div class="mainfooter">
+				<div class="logo">				
+				<img src="{% static 'remontPC/image/home.png' %}" alt="">
+	 			<p><a href="{% url 'main:index' %}">У Михалыча<br/>Ремонт на дому</a></p>	
+				</div>
+					<div class="contacts">
+
+						<div class="time"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/time.png' %}" alt=""></a>
+						8:00-22:00</div>		
+
+						<div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/phone.jpg' %}" alt=""></a>
+						88005553535</div>
+						
+						<div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/geol.png' %}" alt=""></a>
+						Ленина 11</div>
+						
+						<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
+						bgu@mail.com</div>
+					</div>
+					
+					<div class="Sochseti">
+						<div class="vk">
+							<a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
+						</div>
+						<div class="youtube">
+							<a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+						</div>
+					</div>						
+			</div>
+		</footer>    
+               <script language="JavaScript">$('.admenu-mobile').hide();
+                    $('#burg').on('click',function(){
+                    $('.admenu-mobile').slideToggle(1000);
+                    })
+               </script>		            					
+            <script type="text/javascript" src="lightzoom/lightzoom.js"></script>
+            <script type="text/javascript">jQuery('.lightzoom').lightzoom({speed: 400, viewTitle: true});</script>
+    </body>	
+</html>

@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block contentregister %}
+<ul class="breadcrumb">
+    <li><a href="PC.html">Главная</a></li>
+    <li class="activem">Регистрация</li>
+</ul>	
+<div class="zagolov">
+    <h1>Регистрация</h1></div>
+    
+<div class="vhod">
+    <form method="post">
+        {% csrf_token %}
+        <div class="container">
+            <form action="{% url 'users:registration' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Введите логин" required>
+                <input type="email" name="email" placeholder="Введите e-mail" required>
+                <input type="password" name="password" placeholder="Введите пароль" name="psw" required>	
+                <div class="container1">
+                    <a href="{% url 'main:index' %}"><button type="button" class="cancelbtn">Отмена</button></a>
+                    <a href="registration.html"><button type="submit" class="regbtn">Регистрация</button></a>
+                </div>        
+            </form>		    			    
+        </div>
+    </form>
+</div>
+{% endblock %}

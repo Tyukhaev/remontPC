@@ -1,0 +1,1610 @@
+ http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+
+body {
+  line-height: 1;
+}
+
+
+ol, ul {
+  padding-left: 40px; 
+  margin-top: 1em; 
+  margin-bottom: 1em;
+}
+
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+* {
+  margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  flex: 1 0 auto;
+}
+
+
+body{
+  background-color: #D9D9D9;
+  color: #0D0D0D;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+header, footer{
+  background-color: #A6A6A6;
+}
+.mainheader{
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  flex:2;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: no-wrap;
+  font-style: bold; 
+}
+.imgA{
+  margin-top: 3px;
+}
+
+.logo p{
+  flex: 1 1 200px;
+    padding:10px;
+    margin-top: 10px;
+
+}
+
+
+.logo a{
+  text-decoration: none;
+  color:#000;
+  font-size: 1.2em;
+}
+
+
+.logo img{
+  height:60px;
+  width: 60px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.logo img:hover{
+  background-color: #D9D9D9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.contacts{
+  display: flex;
+  flex:2;
+  align-items: center;
+  flex-wrap: no-wrap; 
+  justify-content: center;
+}
+
+.phone{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+  flex-wrap: wrap; 
+}
+.phone img{
+  margin-right: 5px;
+}
+.phone img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+
+.mail{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  margin-right: 20px;
+}
+.mail img{
+  margin-right: 5px;
+}
+.mail img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+
+.time{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+    flex-wrap: wrap; 
+}
+.time img{
+  margin-right: 5px;
+}
+.time img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+.geol{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  flex-wrap: wrap; 
+}
+.geol img{
+  margin-right: 5px;
+}
+.geol img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+.contacts, .Sochseti, .login, .korzina {
+  font-size: 0.8em;
+}
+
+
+.contacts img, .Sochseti img, .login img, .korzina img{
+  height:42px;
+  width: 42px;
+}
+
+
+.Sochseti{
+  display: flex;
+  margin-top: 15px;
+  flex:1;
+  justify-content: center;
+}
+
+
+.Sochseti a {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: #D9D9D9;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    margin: 0 10px 10px 0;
+    padding: 6px;
+    color: #000;
+    margin-top:10px;
+}
+
+
+.vk a:hover {background: #5d84ae; color: #fff; border-radius: 24px;  border: 0.2em solid black;}
+
+
+.youtube a:hover {background: #c4302b; color: #fff;border-radius: 24px;border: 0.2em solid black;}
+
+
+.login{
+  display: flex;
+  flex:3;
+  align-items: center;
+  justify-content: flex-end;  
+}
+
+
+.login img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+.korzina img{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height:42px;
+  width: 42px;
+  margin-right: 15px;
+  flex-wrap: wrap; 
+}
+.korzina img:hover{
+  background: #5d84ae; 
+  color: #fff; 
+  border-radius: 24px; 
+  border: 0.2em solid black;
+}
+.login p{
+  padding:30px;
+}
+.status{
+  margin-top: 10px;
+}
+.login a{
+  text-decoration: none;
+  color: black;
+}
+.login p a:hover{
+  background-color: #D9D9D9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.login button{
+  width: 26%;
+  margin-right: 10px;
+  background:#F2F2F2;
+}
+
+
+  #burg a{
+    display: block;
+    width: 70px;
+  }
+  #burg{
+    width:100%;
+    background:#404040;
+    padding: 7.5px 0 7.5px 2%;
+  }
+  #burg span{
+    display: flex;
+    margin: 6px;
+    width: 20px;
+    height: 2px;
+    background:#f2f2f2;   /**/
+    z-index: 999;
+  }
+  .admenu-mobile{
+    display: flex;
+    width: 100%;
+    background: #404040;
+    flex-direction: column;
+  }
+  #desktop{
+    display: none;
+  }
+
+  .admenu-mobile a{
+    font-size:1.3em;
+    text-decoration: none;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f2f2f2;
+  }
+  .admenu-mobile a:hover{
+    background-color: #A6A6A6;
+  }
+  .admenu-mobile li{
+    list-style-type: none;
+    margin: 4% 5%;
+  }
+  /* } */
+  .admenu-mobile ul{
+    padding: 1% 0;  
+  }
+
+.buttonzagolovok{
+  display: flex;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  font-size: 18px;
+  justify-content: center;
+  font-weight: bold;
+  flex-wrap: wrap;
+  align-items:  flex-start;
+}
+.buttonzagolovok button{
+ /* width: 100%;*/
+  background:#F2F2F2;
+}
+.buttonzagolovok h1{
+  text-align: center;
+}
+.buttonzagolovok a{
+ /* width: 100%;*/
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+margin-top: 10px;
+}
+.buttonzagolovok a:hover{
+     background-color: #D9D9D9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.content h1{
+  text-align: center;
+}
+@media only screen and (max-width : 700px) {
+  .logo{flex:2;}
+  .Sochseti{margin-left:10px;flex:1;}
+  .contacts{flex:4;}
+  .contacts footer{flex:2;}
+ /* .time {margin-left: 5px;flex:3;}*/
+  .phone {margin-right: 5px;}*/
+  .login{flex:3;}
+  .admenu  {
+    border-bottom: 0;
+  }
+  .content .mastertabs{
+    width: 100%; 
+  }
+  .content .filtr .scheduler-border{
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .content .zaka1{
+    width: 100%;
+  }
+  .content .zaka .scheduler-border{
+    width: 100%;
+    margin:0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }    
+  .content .textareazak .form-group{
+    width: 100%;
+    margin:0;
+    margin-right: 20px;
+   /* margin-left: 20px;*/
+  }  
+  .content .bigbutton button{
+        width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .content .mastertabs .inputfiltrUs{
+    margin-left: 20px;
+  }  
+  .content .underfiltr fieldset{
+    width: 10px;
+  }
+  .content .underfiltr{
+    margin: 0;
+  }
+  .content .filtr button{
+    margin:0;
+    width: 94%;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .content .filtrID{
+    margin: 0;
+    margin-top: 10px;
+  }
+  .content .filtr .form-control{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }  
+  .content .hisbtnstatus .form-control{
+    margin:0;
+    margin-bottom: 20px;
+    width: 92%;
+  }
+  .content .hisbtnstatus b{
+    display: none;
+  }
+  .content .inputfiltr{
+    width: 100%;
+    margin:0;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .content .inputfiltrUs {
+    width: 100%;
+    margin:0;
+    margin-right: 10px;
+    margin-left: 10px;
+  }  
+  .content .inputfiltrUs input{
+    width: 94%;
+  }
+  .content .selectfiltrst{
+    width: 90%;
+  }
+  .content .selectfiltrst select{
+    width: 90%;
+  }  
+  .content .statusfiltr{
+    width: 100%;
+    margin-left: 10px;
+  }
+  .content .selectfiltrst select{
+    width: 100%;
+
+  }
+  .content .statusfiltr p{
+    display: none;
+  }
+  .content .datefiltr .form-control{
+    width: 42%;
+  }
+  .content .datefiltr{
+    width: 100%;
+  }
+  .content .datefiltr{
+    margin:0;
+    margin-left: 20px;
+  }
+  .content .datefiltr span{
+    margin-top: 10px;
+  }
+  .content .datefiltrsp{
+    margin:0;
+        display: flex;
+    justify-content: center;
+  }
+  .content .datefiltrsp .form-control{
+    width: 42%;
+  }  
+  .content .datefiltrsp span{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }   
+  .content .edituser form{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .content .everyday select{
+    width: 70%;
+  }
+  .content .dateshedule{
+    width: 94%;
+  }
+  .content .period button{
+    width: 100%;
+    margin:0;
+  }
+  .content .buttonzagolovokinput h1{
+    margin:0;
+    margin-bottom: 10px;
+  }
+  .content .buttonzagolovokinput a{
+    width: 100%;
+  }
+  .content .buttonzagolovokinput button{
+    width: 100%;
+  }  
+  .content .redusluga .reduserimg{
+    margin-bottom: 15px;
+  }
+  .content .textareazak .form-group{
+    /*width: 100%;*/
+  }
+  .content .textareazak{
+    width: 100%;
+  }
+  .content .adduss{
+    margin-top: 10px;
+    width: 100%;
+    margin-right: 10px;
+  }
+  .content .all {
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .content .infsales{
+    width: 100%;
+  }
+  .content .imgsales{
+    display: flex;
+    justify-content: center;
+
+  }
+  .content .twosales .aboutmaster .scheduler-border{
+    width: 100%;
+  }
+  .content .inputfiltrRe{
+    width: 90%;
+  
+  }
+}
+@media only screen and (min-width: 760px){
+  .admenu-mobile,#burg,#mobile
+  {
+    display: none;
+  }
+  .admenu {
+    width: 100%;
+    background: #404040;
+    border-bottom: 2px solid #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #desktop{
+    display: flex;
+  }
+  .admenu ul{
+    padding: 0;
+    margin: 0 auto;
+   /* width: 800px;*/
+    height: 40px;
+  }
+  .admenu li{
+    display: inline;
+    float: left;
+    text-align: center;
+    width: 120px;
+  }
+  .admenu a{
+    color: #f2f2f2;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+
+  }
+  .admenu li a{
+    border-right: 1px solid #576979;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    
+  }
+  .admenu a:hover{
+    background-color: #A6A6A6;
+  }
+  .admenu li:last-child a {
+    border-right: 0;
+  }
+/*  .content .filtr .scheduler-border{
+    width: 60%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }  */
+}
+@media only screen and (max-width: 800px){
+  .content .mastertabs{
+    width: 100%;
+  }
+  .content .tablerasp table thead {
+    display: none;
+  }
+  .content .tablerasp table tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e8e9eb;
+  }
+  .content .tablerasp table td:last-child{
+    border-bottom: 0;
+  }
+  .content .tablerasp table td {
+    display: block;
+    text-align: right;
+  }  
+  .content .tablerasp td:before{
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .content .tablerasp .emptydate{
+    display: none;
+  }
+
+}
+@media only screen and (max-width: 700px){
+  .content .buttonzagolovok button{
+    width: 100%;
+    margin:0;
+    margin-right: 10px;
+    margin-left: 10px;
+  }  
+  .content .buttonzagolovok a{
+    width: 100%;
+    margin:0;
+    margin-right: 15px;
+    /* margin-left: 5px; */
+  }    
+}
+.filtr{
+  justify-content: center;
+  display: flex; 
+}
+.filtr .scheduler-border{
+  display: flex;
+  flex-direction: column;  
+  width: 600px;
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+}
+.filtr .underfiltr fieldset{
+  width: 43.5%;
+  border-radius: .25rem;
+}
+.input-group-append{
+  width: 30%;
+  margin-left: 10px;
+  color: black;
+}
+.buttonzagolovok button{
+ /*  width: 20%; */
+/*  margin-left: 20px;
+  margin-top: 10px;*/
+  background:#F2F2F2;
+}
+.filtr legend{
+  margin-left: 20px;
+  font-size: 1.5em;
+}
+.filtr button{
+  background:#F2F2F2;
+  width: 92%;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.underfiltr{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+.inputfiltr{
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin-left: 21px;
+}
+.inputfiltrUs{
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin-left: 21px;
+}
+.filtr .form-control .inputfiltr{
+  margin-left: 10px;
+  margin-right: 10px; 
+  margin-top: 30px;
+  width: 100%;
+  
+}
+.filtr .form-control .inputfiltrUs{
+  margin-left: 10px;
+  margin-right: 10px; 
+  margin-top: 30px;
+  width: 100%;
+  
+}
+.breadcrumb{
+  background-color: #D9D9D9;
+}
+.breadcrumb li{
+  margin-right: 5px;
+  margin-left: 5px;
+  line-height: 2em;
+}
+
+.filtr .selectfiltr select{
+  margin-left: 10px;
+  margin-right: 10px; 
+  margin-bottom: 10px;
+  margin-top: 10px; 
+  width: 92%;
+}
+.statusfiltr p{
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+.selectfiltrst{
+  width: 240px;
+}
+.filtr .selectfiltrst select{
+  margin-left: 10px;
+  margin-right: 10px; 
+  margin-bottom: 10px;
+  margin-top: 10px; 
+  width: 100%;
+}
+.filtrID{
+  width: 100%;
+  margin-top: 42px;
+}
+.filtrNameUs{
+  width: 100%;
+}
+
+.bigbutton{
+  display: flex;
+  justify-content: center;
+}
+.bigbutton button{
+  
+  width: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.masters .scheduler-border{
+  display: flex;
+  flex-direction: column;  
+  width: 200px;
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+}
+.masters{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.masters p{
+  text-align: center;
+}
+.masters button{
+  background:#F2F2F2;
+  width: 90%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.master1 {
+  margin: 10px 10px 10px 10px;
+}
+.masters h2{
+  text-align: center;
+  padding: 2% 10% 1% 15%;
+  font-size: 1.6em;
+  line-height: 1.2em;
+}
+.masters legend{
+  margin-left: 20px;
+  font-size: 1.5em;
+}
+.masters legend a{
+  border-color: inherit;
+  text-decoration: none;
+  color:
+  black;
+}
+.masters legend a:hover{
+      background:#D9D9D9;
+    cursor: pointer;
+}
+.aboutmaster{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+.infomaster{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.infomaster button{
+  width: 100%;
+  background:#F2F2F2;
+}
+
+.mastertabs{
+  width: 700px;
+  margin:0 auto; 
+  margin-top: 20px;
+}
+/*#nav-tabContent{
+  border: 0.1em solid black;
+}*/
+.mastertabs .form-control{
+  width: 270px;
+}
+.selectmaster{
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: flex-start;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /*margin-left: 15px;*/
+}
+.selectmaster p{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.tablerasp table{
+/*  display: flex;
+  justify-content: center;*/
+  border: 0px;
+  width: 100%;
+  border-collapse: collapse;
+}
+.tablerasp table thead{
+  font-weight: bold;
+}
+.tablerasp table td{
+  padding: 0.6rem 1rem;
+  /*border-bottom: 1px solid #e8e9eb;*/
+}
+/*.content .masterstabs > a:checked + a{
+  border-bottom: 1px solid #FFFFFF;
+}*/
+.cardmasterUs{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cardmasterUs1{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cardmasterUs .scheduler-border{
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+  width: 280px;
+}
+.cardmasterUs .scheduler-border legend{
+  margin-left: 20px;
+   font-size: 1.2em;
+}
+.cardmasterUs .scheduler-border p{
+  margin-left: 5px;
+  padding: 2% 2% 8% 5%;
+}
+.cardmasterUs .scheduler-border a{
+  text-decoration: none;
+  color: black;
+}
+.cardmasterUs .scheduler-border a:hover{
+    background-color: #D9D9D9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.page-item a{
+  color: black;
+}
+.datefiltr{
+  display: flex;
+  /*width: 55%;*/
+  margin-top:45px;
+  margin-bottom: 10px;
+  margin-left: 43px;
+}
+.datefiltr .form-control{
+  width: 40%;
+}
+.datefiltr span b{
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 2.5em;
+  margin-right: 10px;
+}
+.zaka{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.zaka1{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.zaka .scheduler-border{
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+  width: 600px;
+}
+.zaka .scheduler-border legend{
+  margin-left: 20px;
+   font-size: 1.2em;
+}
+.zaka .scheduler-border p{
+  margin-left: 5px;
+  padding: 2% 2% 2% 5%;
+}
+.zaka .scheduler-border a{
+  text-decoration: none;
+  color: black;
+}
+.zaka .scheduler-border a:hover{
+  background-color: #D9D9D9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.pribmastermon{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.hisbtn a{
+  width: 92%;
+  margin-bottom: 10px;
+
+
+}
+.hisbtn button{
+  width: 100%;
+  background:#F2F2F2;
+
+}
+.hisbtn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.hisbtn select{
+  width: 100%;
+}
+.hisbtn b{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.zaka1 p{
+  font-size: 16px;
+  line-height: 1.7em;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.hisbtnstatus a{
+  width: 92%;
+  margin-bottom: 10px;
+
+
+}
+.hisbtnstatus button{
+  width: 100%;
+  background:#F2F2F2;
+
+}
+.hisbtnstatus{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.hisbtnstatus .form-control{
+  margin-bottom: 20px;
+}
+.hisbtnstatus b{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.datefiltrsp{
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 50px;
+  margin-top: 15px;
+}
+.datefiltrsp .form-control{
+  width: 30%;
+}
+.datefiltrsp span{
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.zaka1 b{
+    font-size: 16px;
+  line-height: 1.7em;
+  margin-top: 8px;
+  margin-left: 35px;
+}
+.textareazak{
+  display: flex;
+  justify-content: center;
+  flex-wrap: no-wrap;
+  /*flex-direction: column;
+*/  margin-top: 20px;
+}
+.textareazak .form-group{
+  width: 400px;
+}
+.imgzak{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.imgzak img{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.edituser{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.edituser form{
+    width: 600px;
+}
+.col-auto{
+  padding: 0;
+}
+.edituser button{
+  width: 100%;
+    background: #F2F2F2;
+}
+.reduserimg {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reduserimg {
+    width: 200px;
+    margin-right: 20px;
+}
+.pageX{
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+.magnfilter{
+  margin-right: 80px;
+}
+.crossX{
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.magnfilter img:hover{
+  cursor: pointer;
+}
+.crossX img:hover{
+  cursor: pointer;
+}
+.reduserimg button{
+  margin-top: 5px;
+    background: #F2F2F2;
+}
+.buttonzagolovokinput h1{
+    width: 380px;
+    margin-right: 40px;
+    display: inline-block;
+    border: 1px solid
+    #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.buttonzagolovokinput button{
+    background: #F2F2F2;
+}
+.buttonzagolovokinput{
+  display: flex;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  font-size: 18px;
+  justify-content: center;
+  font-weight: bold;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.cardmasterUs1 button{
+  width: 92%;
+  margin-bottom:  10px;
+  margin-left: 12px;
+  background:#F2F2F2;
+}
+.newus{
+  display: flex;
+  
+  justify-content: center;
+}
+.newus button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 600px;
+    background: #F2F2F2;
+}
+.divshedule{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 10px; 
+}
+.tablerasp{
+  width: 100%;
+}
+.tablerasp img{
+  margin-left:  20px;
+}
+.tablerasp img:hover{
+  background-color: #D9D9D9;
+  cursor: pointer;
+}
+.timershedule{
+  display: flex;
+  flex-wrap: no-wrap;
+  width: 100%;
+}
+.timershedule span{
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.period .scheduler-border{
+  display: flex;
+  flex-direction: column;  
+  width: 100%;
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+}
+.period .w-auto{
+    width: 100%;
+  display: table-cell;
+  text-align: center;
+}
+.dateshedule{
+  display: flex;
+  width: 80%;
+}
+.dateshedule .form-control{
+  width: 50%;
+}
+.dateshedule span b{
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 2.5em;
+  margin-right: 10px;
+}
+.period .form-check{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 10px;
+}
+.period .form-check-label{
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.period p{
+  margin-top: 3px;
+}
+.everyday select{
+  width: 80%;
+}
+.period button{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 92%;
+  margin-left: 20px;
+  background: #F2F2F2;
+}
+.shedulemasters{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.clients .scheduler-border{
+  display: flex;
+  flex-direction: column;  
+  width: 300px;
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+}
+.clients{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.clients p{
+  text-align: center;
+}
+.clients button{
+  background:#F2F2F2;
+  width: 90%;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.client1 {
+  margin: 10px 10px 10px 10px;
+}
+.clients h2{
+  text-align: center;
+  padding: 2% 10% 1% 15%;
+  font-size: 1.6em;
+  line-height: 1.2em;
+}
+.clients legend{
+  margin-left: 20px;
+  font-size: 1.5em;
+}
+.clients legend a{
+  border-color: inherit;
+  text-decoration: none;
+  color:
+  black;
+}
+.clients legend a:hover{
+      background:#D9D9D9;
+    cursor: pointer;
+}
+.chklist{
+  border: 1px solid black;
+  width: 100%;
+  height: 100px;
+  overflow-y: scroll;
+  background-color: white;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+.chklist input{
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.Uslugs{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Usluga1{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 250px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.Usluga1 button{
+  width: 100%;
+  background:#F2F2F2;
+}
+.Usluga1 a{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+.Usluga1 h2{
+  text-align: center;
+}
+.redusluga{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.content .redusluga textarea{
+  height: 180px;
+}
+.redusluga .textareazak button{
+  width: 100%;
+  margin-top: 10px;
+  background: #F2F2F2;
+}
+.redusluga .textareazak button:hover{
+  background: #343a40;
+}
+.redusluga .chklist{
+ border-radius: .25rem;
+ height: 180px;
+}
+.adduss{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 10px;
+
+}
+.redusluga .reduserimg{
+  margin-top: 25px;
+}
+.redusluga .reduserimg button{
+  margin-top: 20px;
+}
+.reviewsall{
+  display: flex;
+  flex-wrap: wrap;
+  color: black; 
+  padding: 1em 10px;
+  justify-content:center;
+  box-sizing: border-box;
+}
+* {box-sizing: border-box;}
+.reviews {
+  width: 700px;
+  margin: 14px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #f2f2f2;
+  border: 2px solid black;
+  padding: 12px;
+  font-size: 1.1em;
+  line-height: 1.2em;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.reviews-img img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  margin-top: 10px;
+}
+.reviews-img .aboutreviews {
+  padding: 10px;
+  color: black;
+  background: #f2f2f2;
+  text-align: center;
+ /* text-transform: uppercase;*/
+  border: 0.1em solid #333;
+}
+.all a:hover{
+  text-decoration: none;
+  color: black;  
+}
+.all{
+  display: flex;
+  justify-content: center;
+}
+.reviewsby{
+  text-align: right;
+  margin-top: 15px;
+}
+.reviews p{ 
+  margin-bottom: 0.15em;
+  margin: 2% 5%;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.star{
+  display: flex;
+  justify-content:center;
+}
+.comments {
+  border: 5px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.comments h2{
+    font-size:18px;
+    margin-bottom:10px;
+    margin-top:20px;
+    text-align: center;
+}
+.comments p{
+  text-align: center;
+  margin-bottom: 0.15em;
+  margin: 2% 5%;
+  font-size: 1em;
+  line-height: 1.5em;
+
+}
+.allcomments {
+  box-sizing: border-box;
+  margin-left: 10px;
+  width: 100%; 
+}
+.comments::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.aboutreviews div{
+  align-items: center;
+}
+
+
+.comments img {
+    float: left;
+    border-radius: 60%;
+    
+}
+.zakazat{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: 10px;
+  width: 300px;
+}
+.zakazat .form-group{
+  width: 100%;
+}
+.zakazat a{
+  width: 100%;
+}
+.zakazat button{
+  width: 100%;
+  background:#F2F2F2;
+}
+.infsales p{
+  margin-top:  10px;
+  font-size: 15px;
+  margin-bottom: 0.7px;
+  line-height: 1.5em;
+  margin-left: 15px;
+}
+.infsales b{
+  margin-left: 15px;
+}
+.infsales{
+  margin-left: 10px;
+  width: 360px;
+}
+.twosales .aboutmaster .scheduler-border{
+  display: flex; 
+  justify-content: center;
+  width: 600px;
+  border: 0.1em solid black;
+  border-radius: .25rem;
+  background-color: #eee;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.twosales .aboutmaster legend{
+  margin-left: 15px;
+}
+.imgsales{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.infsales a{
+  float: right;
+  margin-right: 10px;
+  margin-bottom: 10px
+}
+.twosales {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filtrdatesl{
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.filtrdatesl .form-control{
+  width: 44%;
+}
+.filtrdatesl span{
+  margin-top:10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.twosales legend a{
+  border-color: inherit;
+  text-decoration: none;
+  color:
+  black;
+}
+.twosales legend a:hover{
+      background:#D9D9D9;
+    cursor: pointer;
+}
+.salesh2 h2{
+  text-align: center;
+}
+.salesimg{
+  display: flex;
+  justify-content: center;
+}
+.timsales{
+    display: flex;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.timsales span{
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.textareazak .form-check-label{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.inputfiltrRe{
+  width: 45%;
+  margin-left: 20px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputfiltrRe .filtrName{
+  width: 100%;
+}
+.chklist p{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.chklist1 {
+  border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    overflow-y: scroll;
+    background-color:
+    white;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    border-radius: .25rem;
+}
+.chklist1 .form-check{
+  margin-left: 5px;
+}
+.tablic{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.imgzakdel {
+  display: flex;
+  flex-direction: column;
+}
+.imgzakdel button{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}

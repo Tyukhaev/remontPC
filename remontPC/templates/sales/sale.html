@@ -1,0 +1,58 @@
+{% extends 'mainsales.html' %}
+
+{% block title %}Акция {{s.sale_name}} {% endblock  %}
+
+{% block salescard %}
+        <ul class="breadcrumb">
+            <li><a href="{% url 'main:index' %}">Главная</a></li>
+            <li><a href="{% url 'sales:sales' %}">Акции</a></li>
+            <li class="activem">Акция "{{s.sale_name}}"</li>
+        </ul>	
+        
+        <div class="zagolov">
+            <h1>{{s.sale_name}}</h1></div>
+            <div class="salesss">	
+                <div class="salesssb"><h2>Актуально: с {{s.sale_datestart}} по {{s.sale_dateend}}</h2></div>				
+                <div class="salesssimg"><img src="{{s.sale_image.url}}"  alt=""></div>
+            
+            
+            
+            </div>
+            <div class="zagolovh2">
+            <h2>Распространяется на услуги</h2></div>	
+            <div class="allcardsus"> 
+				{% for ss in salesservice %}
+
+                <div class="carduslugs">
+			
+                    <fieldset class="carduslugsfie">
+                        <legend class="filtrlegend"><a href="{% url 'services:servicedetail' ss.id %}">{{ss.service_name}}</a></legend>
+                        <div class="uslugaprice"><img src="image/ruble.png"  alt=""><p>Цена: {{ss.service_price}} рублей</p></div>
+                        <div class="uslugatime"><img src="image/averagetime.png"   alt=""><p>Среднее время: {{ss.service_averagetime}} минут</p></div>					
+                    </fieldset>	
+        
+                </div>	
+				{% endfor %}
+            </div>
+
+{% endblock  %}
+{% block pagination1 %}
+<div class="pagination">
+
+    {% if salesservice.has_previous %}
+        <a href="?page={{salesservice.previous_page_number}}">Назад</a>
+    {% endif %}
+    {% for pg in salesservice.paginator.page_range %}
+        {% if salesservice.number == pg %}
+        <a class="active" href="?page={{pg}}">{{pg}}</a>				
+        {% else %}
+        <a href="?page={{pg}}">{{pg}}</a>
+        {% endif %}
+    {% endfor %}
+    {% if salesservice.has_next %}
+        <a href="?page={{salesservice.next_page_number}}">Далее</a>
+    {% endif %}
+</div>
+    {% endblock %}   
+
+

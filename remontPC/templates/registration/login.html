@@ -1,0 +1,55 @@
+{% extends "base_generic.html" %}
+
+{% block contentlogin %}
+
+{% if form.errors %}
+  <p>Ваш логин или пароль не верный. Попробуйте снова.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+<ul class="breadcrumb">
+    <li><a href="PC.html">Главная</a></li>
+    <li class="activem">Авторизация</li>
+  </ul>	
+<div class="zagolov">
+    <h1>Вход</h1></div>
+<div class="vhod">
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<div class="container">
+<table>
+
+<tr>
+  <td><b>{{ form.username.label_tag }}</b></td>
+  <td class="vhodtd">{{ form.username }}</td>
+</tr>
+
+<tr>
+  <td><b>{{ form.password.label_tag }}</b></td>
+  <td class="vhodtd" >{{ form.password }}</td>
+</tr>
+
+
+</table>
+<a href="#"><button type="submit">Войти</button></a>
+<input type="hidden" name="next" value="{{ next }}" />
+{# Assumes you setup the password_reset view in your URLconf #}
+<span class="psw"><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></span>
+<div class="container1">
+<a href="PC.html"><button type="button" class="cancelbtn">Отмена</button></a>
+<a href="{% url 'users:registration' %}"><button type="button" class="regbtn">Регистрация</button></a>
+</div>
+
+</div>
+</form>
+</div>
+
+
+{% endblock %}

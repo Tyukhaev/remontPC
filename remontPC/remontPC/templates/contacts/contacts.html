@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+		<meta charset="UTF-8" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link rel="stylesheet" href="{% static 'remontPC/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'remontPC/lightzoom/style.css' %}" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
+        <script src="script.js"></script>	
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>{% block title %}Ремонт компьютеров на дому{% endblock  %}</title>
+    </head>
+    <body>
+    <header>
+        <div class = "mainheader">
+			
+			<div class="logo">				
+			<a class="imgA" href="{% url 'main:index' %}"><img src="{% static 'remontPC/image/home.png' %}" alt=""></a>
+ 			<p><a href="{% url 'main:index' %}">У Михалыча<br/>Ремонт на дому</a></p>	
+			</div>
+				<div class="contacts">
+					<div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/phone.jpg' %}" alt=""></a> 
+					88005553535</div>
+					
+					<div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/geol.png' %}" alt=""></a>
+					Ленина 11</div>
+					
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
+					bgu@mail.com</div>
+				</div>
+				
+				<div class="Sochseti">
+					<div class="vk">
+						<a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
+					</div>
+					<div class="youtube">
+						<a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+					</div>
+				</div>								
+				<div class="login">		
+                    {% if user.is_authenticated %}
+                    <img src="{% static 'remontPC/image/icon.png' %}" alt="">                
+                    <p><a href="{% url 'users:client' user.id %}">{{user.username}}</a></p>
+                    <div class="cart">
+                        {% with total_items=cart|length %}
+                            {% if cart|length > 0 %}
+                                У вас в заказе:
+                                <a href="{% url 'cart:cart_detail' %}">
+                                    {{ total_items }} услуга{{ total_items|pluralize }},
+                                    на сумму {{ cart.get_total_price }} руб.
+                                </a>
+                            {% else %}
+                                Ваша карзина пуста
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+					<div class="korzina"><a href="{% url 'cart:cart_detail' %}"><img src="{% static 'remontPC/image/korzina.png' %}" alt=""></a>
+					</div>
+					<a href="{% url 'logout' %}" class="button">Выйти</a>
+					{% else %}
+					<p><a href="{% url 'login' %}">Гость</a></p>
+					<a href="{% url 'login' %}" class="button">Войти</a>
+					{% endif %}							
+                </div>		
+            </div>	
+		
+	</header>
+		<div class='admenu' >
+			<nav id="desktop">
+				<ul>
+					<li><a href="{% url 'mainservices:index' %}">Услуги</a></li>
+					<li><a href="{% url 'users:workers' %}">Мастера</a></li>
+					<li><a href="{% url 'reviews:reviews' %}">Отзывы</a></li>
+					<li><a href="{% url 'users:contacts' %}">Контакты</a></li>
+					<li><a href="{% url 'sales:sales' %}">Акции</a></li>
+				</ul>	
+			</nav>	
+		</div>	
+               <div id="burg">
+                    <a href="#">
+                         <span></span>
+                         <span></span>
+                         <span></span>
+                    </a>
+               </div>	
+		<div class='admenu-mobile' >
+			<nav id="mobile">
+				<ul>
+					<li><a href="{% url 'mainservices:index' %}">Услуги</a></li>
+					<li><a href="{% url 'users:workers' %}">Мастера</a></li>
+					<li><a href="{% url 'reviews:reviews' %}">Отзывы</a></li>
+					<li><a href="{% url 'users:contacts' %}">Контакты</a></li>
+					<li><a href="{% url 'sales:sales' %}">Акции</a></li>
+				</ul>	
+			</nav>	
+		</div>
+		<ul class="breadcrumb">
+            <li><a href="{% url 'main:index' %}">Главная</a></li>
+            <li class="activem">Контакты</li>
+          </ul>	
+          <div class="content">
+          <div class="zagolov">
+          <h1>Контакты</h1></div>
+              <div class="contactsicon">
+                  <!-- <div class="kont1"> --><div class="phonekont"><img src="{% static 'remontPC/image/phone.jpg' %}" alt="">
+                  <p>88005553535</p></div>
+                          
+                  <div class="geolkont"><img src="{% static 'remontPC/image/geol.png' %}" alt="">
+                  <p>г.Иркутск, Ленина 11</p></div><!-- </div> -->
+                          
+                  <!-- <div class="kont2"> --><div class="mailkont"><img src="{% static 'remontPC/image/mail.png' %}" alt="">
+                  <p>bgu@mail.com</p></div>
+  
+                  <div class="timekont"><img src="{% static 'remontPC/image/time.png' %}" alt="">
+                  <p>8:00-22:00</p></div><!-- </div>	 -->				
+  
+                  <!-- <div class="kont3"> --><div class="vkkont"><img src="{% static 'remontPC/image/vk.png' %}" alt="">
+                  <p>Группа Вконтакте</p></div>
+  
+                  <div class="youtubekont"><img src="{% static 'remontPC/image/youtube.png' %}" alt="">
+                  <p>Мы на YouTube!</p></div><!-- </div> -->
+  
+              </div>	
+              <div class="bigbutton"><a href="{% url 'users:writeus' %}" class="buttonbig">Напишите нам!</a></div>	
+              <div class="zagolov">
+                              <h2>Мы находимся</h2>
+                  <div class="kont">
+                  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9f1d0284d260497311077d6ad7d13a8e260fbdc8fdfb9744d2ab83ac9d91c100&amp;width=5350&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+                  </div>	
+              </div>				
+          </div>
+		<footer >
+			<div class="mainfooter">
+				<div class="logo">				
+				<img src="{% static 'remontPC/image/home.png' %}" alt="">
+	 			<p><a href="{% url 'main:index' %}">У Михалыча<br/>Ремонт на дому</a></p>	
+				</div>
+					<div class="contacts">
+
+						<div class="time"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/time.png' %}" alt=""></a>
+						8:00-22:00</div>		
+
+						<div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/phone.jpg' %}" alt=""></a>
+						88005553535</div>
+						
+						<div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/geol.png' %}" alt=""></a>
+						Ленина 11</div>
+						
+						<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
+						bgu@mail.com</div>
+					</div>
+					
+					<div class="Sochseti">
+						<div class="vk">
+							<a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
+						</div>
+						<div class="youtube">
+							<a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+						</div>
+					</div>						
+			</div>
+		</footer>	   
+               <script language="JavaScript">$('.admenu-mobile').hide();
+                    $('#burg').on('click',function(){
+                    $('.admenu-mobile').slideToggle(1000);
+                    })
+               </script>		            					
+			<script type="text/javascript" src="lightzoom/lightzoom.js"></script>
+			<script type="text/javascript">jQuery('.lightzoom').lightzoom({speed: 400, viewTitle: true});</script>
+	</body>	
+</html>
