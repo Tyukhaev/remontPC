@@ -2775,3 +2775,8 @@ span.psw a:hover{
   text-align: center;
   margin-bottom: 20px;
 }
+.swiper-slide .remontpc{
+	display:flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}

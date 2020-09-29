@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="{% static 'remontPC/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'remontPC/lightzoom/style.css' %}" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
+		<link rel="stylesheet" href="{% static 'remontPC/package/font-awesome.min.css' %}"> 
         <script src="script.js"></script>	
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'remontPC/package/jquery.min.js' %}"></script> 
+		<link rel="stylesheet" href="{% static 'remontPC/package/swiper-bundle.min.css' %}">
         <title>{% block title %}Ремонт компьютеров на дому{% endblock  %}</title>
     </head>
     <body>
@@ -28,17 +29,12 @@
 					
 					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
 					bgu@mail.com</div>
-				</div>
-				
-				<div class="Sochseti">
-					<div class="vk">
-						<a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
+				</div>										
+				<div class="login">	
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/vk.png' %}" alt=""></a>
 					</div>
-					<div class="youtube">
-						<a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
-					</div>
-				</div>								
-				<div class="login">		
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/youTube.png' %}" alt=""></a>
+					</div>				
                     {% if user.is_authenticated %}
                     <img src="{% static 'remontPC/image/icon.png' %}" alt="">                
                     <p><a href="{% url 'users:client' user.id %}">{{user.username}}</a></p>
@@ -193,40 +189,35 @@
         <footer >
             <div class="mainfooter">
                 <div class="logo">				
-                <img src="{% static "remontPC/image/home.png" %}" alt="">
-                 <p><a href="">У Михалыча<br/>Ремонт на дому</a></p>	
+                <img src="{% static 'remontPC/image/home.png' %}" alt="">
+                 <p><a href="{% url 'main:index' %}">У Михалыча<br/>Ремонт на дому</a></p>	
                 </div>
                     <div class="contacts">
 
-                        <div class="time"><a href="{% url 'users:contacts' %}"><img src="{% static "remontPC/image/time.png" %}" alt=""></a>
+                        <div class="time"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/time.png' %}" alt=""></a>
                         8:00-22:00</div>		
 
-                        <div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static "remontPC/image/phone.jpg" %}" alt=""></a>
+                        <div class="phone"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/phone.jpg' %}" alt=""></a>
                         88005553535</div>
                         
-                        <div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static "remontPC/image/geol.png" %}" alt=""></a>
+                        <div class="geol"><a href="{% url 'users:contacts' %}"><img src="{% static 'remontPC/image/geol.png' %}" alt=""></a>
                         Ленина 11</div>
                         
-                        <div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static "remontPC/image/mail.png" %}" alt=""></a>
+                        <div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/mail.png' %}" alt=""></a>
                         bgu@mail.com</div>
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/vk.png' %}" alt=""></a>
+					</div>
+					<div class="mail"><a href="{% url 'users:writeus' %}"><img src="{% static 'remontPC/image/youTube.png' %}" alt=""></a>
+					</div>
                     </div>
-                    
-                    <div class="Sochseti">
-                        <div class="vk">
-                            <a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a> 
-                        </div>
-                        <div class="youtube">
-                            <a href="#" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
-                        </div>
-                    </div>						
-            </div>
+			</div>					
         </footer>	   
                <script language="JavaScript">$('.admenu-mobile').hide();
                     $('#burg').on('click',function(){
                     $('.admenu-mobile').slideToggle(1000);
                     })
                </script>		            					
-            <script type="text/javascript" src="lightzoom/lightzoom.js"></script>
+            <script type="text/javascript" src="{% static 'remontPC/lightzoom/lightzoom.js' %}"></script>
 			<script type="text/javascript">jQuery('.lightzoom').lightzoom({speed: 400, viewTitle: true});</script>
 			<script>
 				function myFunction() {
@@ -238,7 +229,7 @@
 					}
 				}
 				</script>
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script src="{% static 'remontPC/package/jquery.min.js' %}"></script>
 				<script>
 					$(document).ready(function(){
 					  $(".filtr .hide").click(function(){
