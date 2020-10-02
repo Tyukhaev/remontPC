@@ -28,7 +28,7 @@ SECRET_KEY = 'hdzu3#f$0yt)8x*&5&$#bc+(n$qdy6$-ul4s8=qr8%8g^*81(6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,4 +137,3 @@ STATICFILES_DIRS = [
 ]
 LOGIN_REDIRECT_URL = '/'
 CART_SESSION_ID = 'cart'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
