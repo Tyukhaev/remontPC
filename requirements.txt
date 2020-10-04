@@ -27,4 +27,4 @@ virtualenv-clone==0.5.4
 whitenoise==5.2.0
 win-api==0.0.0
 wrapt==1.12.1
-psycopg==2.6.2
+

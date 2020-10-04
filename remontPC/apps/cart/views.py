@@ -5,6 +5,7 @@ from .cart import Cart
 from .forms import CartAddServiceForm
 
 
+
 @require_POST
 def cart_add(request, service_id):
     cart = Cart(request)
