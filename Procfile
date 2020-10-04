@@ -1,1 +1,1 @@
-web: gunicorn remontPC.wsgi --log-file -
+web: gunicorn remontPC.remontPC.wsgi --log-file -
